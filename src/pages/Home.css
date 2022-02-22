@@ -1,0 +1,59 @@
+.home-header {
+  padding: 200px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(45, 65, 67, 0.7),
+      rgba(43, 61, 64, 0.7),
+      rgba(40, 56, 60, 1),
+      rgba(36, 47, 53, 1),
+      #20272d,
+      #1c2127,
+      #1b1f24
+    ),
+    url('../assets/universe_generative_pattern.png');
+}
+
+.header-title {
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 96px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.header-title p {
+  font-size: 20px;
+  color: #959da5;
+}
+
+.home-powered {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.home-powered span {
+  margin-bottom: 140px;
+  font-size: 16px;
+  color: #737e8a;
+}
+
+.home-powered img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-inline: auto;
+}
+
+.home-powered p {
+  width: 70%;
+  margin-inline: auto;
+  font-size: 24px;
+  line-height: 32px;
+  color: #6e7681;
+}

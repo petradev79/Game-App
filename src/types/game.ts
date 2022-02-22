@@ -1,4 +1,4 @@
-type Game = {
+type GameType = {
   id: number;
   title: string;
   thumbnail: string;
@@ -12,4 +12,4 @@ type Game = {
   freetogame_profile_url: string;
 };
 
-export default Game;
+export default GameType;
