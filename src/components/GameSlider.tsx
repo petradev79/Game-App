@@ -1,29 +1,32 @@
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import { useContext } from 'react';
-import { GamesContext } from '../store/games-context';
+import GameType from '../types/game';
 import './GameSlider.css';
 
-const GameSlider = () => {
-  const gamesCtx = useContext(GamesContext);
-  console.log(gamesCtx.data);
+const GameSlider: React.FC<{
+  data: GameType[];
+  settings: {};
+  forList: boolean;
+}> = ({ data, settings, forList }) => {
+  const [isForList, setIsForList] = useState(false);
 
-  const settings = {
-    Infinity: true,
-    centerMode: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 7000,
-    arrows: false,
-    centerPadding: '0',
+  useEffect(() => {
+    setIsForList(forList);
+  }, []);
+
+  const chosenGameHandler = (item: GameType) => {
+    if (isForList) {
+      console.log(item);
+    }
   };
 
   return (
     <div className='slider-wrapper'>
       <Slider {...settings} className='slider'>
-        {gamesCtx.data.map((item) => (
-          <div key={item.id}>
+        {data.map((item) => (
+          <div key={item.id} onClick={chosenGameHandler.bind(null, item)}>
             <img src={item.thumbnail} alt={item.title} />
+            {isForList && <p className='slide-name'>{item.title}</p>}
           </div>
         ))}
       </Slider>

@@ -1,9 +1,10 @@
-import './Header.css';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-const Header = () => {
+const Navbar: React.FC = () => {
   return (
-    <div className='header'>
-      <div className='header-wrapper'>
+    <nav className='navbar'>
+      <div className='navbar-wrapper'>
         <div className='logo'>
           <svg
             width='25'
@@ -25,19 +26,22 @@ const Header = () => {
                 y2='264.365'
                 gradientUnits='userSpaceOnUse'
               >
-                <stop stop-color='#1ADFEC' />
-                <stop offset='0.255208' stop-color='#4283A7' />
-                <stop offset='0.520833' stop-color='#A10CE7' />
-                <stop offset='0.78125' stop-color='#EC008C' />
-                <stop offset='1' stop-color='#FE035D' />
+                <stop stopColor='#1ADFEC' />
+                <stop offset='0.255208' stopColor='#4283A7' />
+                <stop offset='0.520833' stopColor='#A10CE7' />
+                <stop offset='0.78125' stopColor='#EC008C' />
+                <stop offset='1' stopColor='#FE035D' />
               </linearGradient>
             </defs>
           </svg>
           <span>Best Game App</span>
         </div>
+        <div className='links'>
+          <Link to='/'>Home</Link> | <Link to='/games'>Games</Link>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

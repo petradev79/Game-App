@@ -1,0 +1,27 @@
+.games-header {
+  background: linear-gradient(
+      to left top,
+      rgba(45, 65, 67, 0.5),
+      rgba(43, 61, 64, 0.6),
+      rgba(40, 56, 60, 0.7),
+      rgba(36, 47, 53, 0.7),
+      rgb(32, 39, 45, 0.8),
+      rgb(28, 33, 39, 0.8),
+      rgb(27, 31, 36, 0.9)
+    ),
+    url('../assets/witcher.jpg');
+}
+
+.games-lists {
+  padding: 100px 0;
+  background: linear-gradient(
+    to right bottom,
+    #2d4143,
+    #2b3d40,
+    #28383c,
+    #242f35,
+    #20272d,
+    #1c2127,
+    #1b1f24
+  );
+}

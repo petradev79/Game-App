@@ -1,31 +1,33 @@
-import { useContext } from 'react';
-import { GamesContext } from '../store/games-context';
-import GameItem from './GameItem';
+import { useState, useEffect } from 'react';
+import fetch from '../helper/fetch';
+import GameSlider from '../components/GameSlider';
+import GameType from '../types/game';
+import './GamesList.css';
 
-const GamesList: React.FC = () => {
-  const gamesCtx = useContext(GamesContext);
+const settings = {
+  Infinity: true,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+};
 
-  if (gamesCtx.loading) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  }
+const GamesList: React.FC<{ title: string; requestUrl: string }> = ({
+  title,
+  requestUrl,
+}) => {
+  const [games, setGames] = useState<GameType[]>([]);
 
-  if (gamesCtx.errorMessage) {
-    return (
-      <section>
-        <p>{gamesCtx.errorMessage}</p>
-      </section>
-    );
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch.get(requestUrl);
+      setGames(response.data);
+    };
+    fetchData();
+  }, [requestUrl]);
 
   return (
     <div className='game-list'>
-      {gamesCtx.data.map((game) => (
-        <GameItem key={game.id} {...game} />
-      ))}
+      <h2>{title}</h2>
+      <GameSlider data={games} settings={settings} forList={true} />
     </div>
   );
 };

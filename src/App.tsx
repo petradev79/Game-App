@@ -1,21 +1,18 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GamesContextProvider from './store/games-context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Games from './pages/Games';
+import Navbar from './components/Navbar';
 import './App.css';
-import Header from './components/Header';
 
 function App() {
   return (
-    <GamesContextProvider>
-      <Header />
-      <Router>
-        <Switch>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-    </GamesContextProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='games' element={<Games />} />
+      </Routes>
+    </Router>
   );
 }
 

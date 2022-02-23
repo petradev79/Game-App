@@ -1,6 +1,10 @@
+import { useState, useEffect } from 'react';
+import fetch from '../helper/fetch';
+import requests from '../helper/requests';
 import GameSlider from '../components/GameSlider';
-import GamesList from '../components/GamesList';
+import HeaderTitle from '../UI/HeaderTitle';
 import ArticleCard from '../UI/ArticleCard';
+import GameType from '../types/game';
 import {
   faComputerMouse,
   faCalendarCheck,
@@ -9,18 +13,39 @@ import {
 import freetogameLogo from '../assets/freetogame-logo.png';
 import './Home.css';
 
-const Home = () => {
+const title = {
+  title: 'Your favorite game',
+  subtitle:
+    'With Game App, you can find games by deferent platform, game category and release date.',
+};
+
+const settings = {
+  Infinity: true,
+  centerMode: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  arrows: false,
+  centerPadding: '0',
+};
+
+const Home: React.FC = () => {
+  const [games, setGames] = useState<GameType[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch.get(requests.fetchByPlatformPC);
+      setGames(response.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <main className='home'>
-      <section className='home-header'>
-        <div className='header-title'>
-          <h1>Your favorite game</h1>
-          <p>
-            With Game App, you can find games by deferent platform, game
-            category and release date.
-          </p>
-        </div>
-        <GameSlider />
+      <section className='home-header header'>
+        <HeaderTitle title={title.title} subtitle={title.subtitle} />
+        <GameSlider data={games} settings={settings} forList={false} />
 
         <div className='home-powered container'>
           <span>Powered by</span>
@@ -40,8 +65,6 @@ const Home = () => {
           <ArticleCard title='Games by date' icon={faCalendarCheck} />
         </div>
       </section>
-
-      <GamesList />
     </main>
   );
 };
