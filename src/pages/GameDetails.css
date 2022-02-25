@@ -1,0 +1,41 @@
+.game-details {
+  padding: 200px 0;
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(45, 65, 67, 0.7),
+      rgba(43, 61, 64, 0.7),
+      rgba(40, 56, 60, 1),
+      rgba(36, 47, 53, 1),
+      #20272d,
+      #1c2127,
+      #1b1f24
+    ),
+    url('../assets/universe_generative_pattern.png');
+}
+
+.big-desccription--details {
+  margin-bottom: 50px;
+}
+
+.big-desccription--details h2 {
+  color: rgb(68, 151, 158);
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.big-desccription--details p {
+  color: #a1bbc3;
+  margin-bottom: 20px;
+}
+
+.game-details__header {
+  background: #09444b;
+  margin-bottom: 30px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

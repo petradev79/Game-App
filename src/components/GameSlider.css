@@ -24,11 +24,13 @@
   color: #fff;
   text-align: center;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .slick-slide img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .slick-arrow.slick-prev,
@@ -38,7 +40,7 @@
 
 .slick-arrow.slick-prev::before,
 .slick-arrow.slick-next::before {
-  color: rgb(77, 144, 146);
+  color: rgb(68, 151, 158);
 }
 
 .home .slider-wrapper {

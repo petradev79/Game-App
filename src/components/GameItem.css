@@ -1,0 +1,57 @@
+.game-item {
+  color: #fff;
+  width: 70%;
+  max-width: 960px;
+}
+
+.game-item__img img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.game-item__img div {
+  margin-top: 10px;
+  align-items: center;
+}
+
+.game-item__img span {
+  color: #a1bbc3;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-item__system_req h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a1bbc3;
+  margin-bottom: 20px;
+}
+
+.game-item__system_req p:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+.game-item__system_req p span {
+  display: block;
+  color: #a1bbc3;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-item__footer {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgb(44, 121, 128);
+}
+
+.game-item__footer p {
+  font-size: 14px;
+  line-height: 170%;
+  color: #a1bbc3;
+}

@@ -1,0 +1,40 @@
+.btn {
+  position: relative;
+  padding: 10px 30px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid rgb(68, 151, 158);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgb(68, 151, 158);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn--ghost::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn--ghost:hover::after {
+  transform: scaleX(1);
+}
+
+.btn--full::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn--full:hover::after {
+  transform: scaleX(0);
+}

@@ -1,4 +1,5 @@
 .home-header {
+  padding: 200px 0;
   background: radial-gradient(
       circle at 50% 50%,
       rgba(45, 65, 67, 0.7),
@@ -27,27 +28,22 @@
   color: #959da5;
 }
 
-.home-powered {
-  text-align: center;
+.big-desccription--home {
   margin-bottom: 70px;
 }
 
-.home-powered span {
+.big-desccription--home span {
   margin-bottom: 140px;
   font-size: 16px;
   color: #737e8a;
 }
 
-.home-powered img {
+.big-desccription--home img {
   margin-top: 10px;
   margin-bottom: 20px;
   margin-inline: auto;
 }
 
-.home-powered p {
-  width: 70%;
-  margin-inline: auto;
-  font-size: 24px;
-  line-height: 32px;
+.big-desccription--home p {
   color: #6e7681;
 }

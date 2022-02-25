@@ -1,7 +1,6 @@
 .container {
   width: 100%;
   max-width: 1300px;
-  padding: 10px 20px;
   margin-inline: auto;
 }
 
@@ -10,11 +9,29 @@
   gap: var(--gap-space, 10px);
 }
 
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
 .header {
-  padding: 200px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 50px;
+}
+
+.big-desccription {
+  text-align: center;
+}
+
+.big-desccription p {
+  width: 70%;
+  margin-inline: auto;
+  font-size: 24px;
+  line-height: 32px;
 }

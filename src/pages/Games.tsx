@@ -12,8 +12,17 @@ const title = {
 const Games: React.FC = () => {
   return (
     <main className='games'>
-      <section className='games-header header'>
+      <section className='header games-header'>
         <HeaderTitle title={title.title} subtitle={title.subtitle} />
+        <div className='big-desccription big-desccription--games container'>
+          <h2>The Witcher 3: Wild Hunt</h2>
+          <p>
+            It is an action role-playing game developed by CD Projekt Red, takes
+            place in a fictional fantasy world based on Slavic mythology.
+            Players control Geralt of Rivia, a monster slayer for hire known as
+            a Witcher.
+          </p>
+        </div>
       </section>
       <section className='games-lists'>
         <GamesList

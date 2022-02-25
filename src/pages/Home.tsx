@@ -4,11 +4,11 @@ import requests from '../helper/requests';
 import GameSlider from '../components/GameSlider';
 import HeaderTitle from '../UI/HeaderTitle';
 import ArticleCard from '../UI/ArticleCard';
-import GameType from '../types/game';
+import ImageType from '../types/image';
 import {
-  faComputerMouse,
-  faCalendarCheck,
-  faKeyboard,
+  faWandSparkles,
+  faDice,
+  faDiceD20,
 } from '@fortawesome/free-solid-svg-icons';
 import freetogameLogo from '../assets/freetogame-logo.png';
 import './Home.css';
@@ -31,7 +31,7 @@ const settings = {
 };
 
 const Home: React.FC = () => {
-  const [games, setGames] = useState<GameType[]>([]);
+  const [games, setGames] = useState<ImageType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         <HeaderTitle title={title.title} subtitle={title.subtitle} />
         <GameSlider data={games} settings={settings} forList={false} />
 
-        <div className='home-powered container'>
+        <div className='big-desccription big-desccription--home container'>
           <span>Powered by</span>
           <img src={freetogameLogo} alt='Logo' />
           <p>
@@ -60,9 +60,9 @@ const Home: React.FC = () => {
           className='flex container'
           style={{ ['--gap-space' as any]: '50px' }}
         >
-          <ArticleCard title='Games by platform' icon={faKeyboard} />
-          <ArticleCard title='Games by category' icon={faComputerMouse} />
-          <ArticleCard title='Games by date' icon={faCalendarCheck} />
+          <ArticleCard title='Games by platform' icon={faDiceD20} />
+          <ArticleCard title='Games by category' icon={faWandSparkles} />
+          <ArticleCard title='Games by tag' icon={faDice} />
         </div>
       </section>
     </main>

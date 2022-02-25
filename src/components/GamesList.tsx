@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import fetch from '../helper/fetch';
 import GameSlider from '../components/GameSlider';
-import GameType from '../types/game';
+import ImageType from '../types/image';
 import './GamesList.css';
 
 const settings = {
@@ -14,7 +14,7 @@ const GamesList: React.FC<{ title: string; requestUrl: string }> = ({
   title,
   requestUrl,
 }) => {
-  const [games, setGames] = useState<GameType[]>([]);
+  const [games, setGames] = useState<ImageType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
