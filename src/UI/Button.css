@@ -38,3 +38,7 @@
 .btn--full:hover::after {
   transform: scaleX(0);
 }
+
+.btn--full-w:hover {
+  color: rgb(68, 151, 158);
+}

@@ -9,6 +9,9 @@ import {
   faDiceD20,
 } from '@fortawesome/free-solid-svg-icons';
 import freetogameLogo from '../assets/freetogame-logo.png';
+import cyberpunk from '../assets/cyberpunk.jpg';
+import assassin from '../assets/assassin.jpg';
+import gta from '../assets/gta.jpg';
 import './Home.css';
 
 const title = {
@@ -16,6 +19,24 @@ const title = {
   subtitle:
     'With Game App, you can find games by deferent platform, game category and release date.',
 };
+
+const aboutGameData = [
+  {
+    title: 'Cyberpunk 2077',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid earum dolorum enim iure. Quibusdam magnam, culpa suscipit labore consectetur nemo architecto hic aliquid et a cumque natus necessitatibus nostrum.',
+    imgUrl: cyberpunk,
+  },
+  {
+    title: "Assassin's Creed",
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid earum dolorum enim iure. Quibusdam magnam, culpa suscipit labore consectetur nemo architecto hic aliquid et a cumque natus necessitatibus nostrum.',
+    imgUrl: assassin,
+  },
+  {
+    title: 'Grand Theft Auto',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid earum dolorum enim iure. Quibusdam magnam, culpa suscipit labore consectetur nemo architecto hic aliquid et a cumque natus necessitatibus nostrum.',
+    imgUrl: gta,
+  },
+];
 
 const settings = {
   Infinity: true,
@@ -54,7 +75,27 @@ const Home: React.FC<{ games: ImageType[] }> = ({ games }) => {
         </div>
       </section>
       <section className='home-body'>
-        <AboutGame />
+        <div className='home-body__title container'>
+          <h2>About game app</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+            accusamus expedita cum soluta voluptatum sequi aperiam, ab maxime
+            provident excepturi non quaerat explicabo natus itaque, perspiciatis
+            fugiat nam repellat, nihil ut error odio laborum dolore. Vitae
+            tempore nihil molestias architecto, asperiores, et sunt iusto nam
+            amet earum dolore, deserunt delectus?
+          </p>
+        </div>
+        <div className='home-body__content container'>
+          {aboutGameData.map((item) => (
+            <AboutGame
+              title={item.title}
+              text={item.text}
+              imgUrl={item.imgUrl}
+              key={item.title}
+            />
+          ))}
+        </div>
       </section>
     </main>
   );

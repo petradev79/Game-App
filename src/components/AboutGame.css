@@ -1,0 +1,37 @@
+.about-game {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-game:not(:last-child) {
+  margin-bottom: 200px;
+}
+
+.about-game:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.about-game__content {
+  flex: 0.5;
+}
+
+.about-game__content h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #24292f;
+  margin-bottom: 20px;
+}
+
+.about-game__content p {
+  line-height: 28px;
+  color: #6a737d;
+  margin-bottom: 50px;
+}
+
+.about-game__img {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.75);
+}
