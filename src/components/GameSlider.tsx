@@ -16,7 +16,7 @@ const GameSlider: React.FC<{
     setIsForList(forList);
   }, []);
 
-  const chosenGameHandler = (id: number) => {
+  const choseGameHandler = (id: number) => {
     if (!isForList) return;
     navigate(`/game/:${id}`);
   };
@@ -25,7 +25,7 @@ const GameSlider: React.FC<{
     <div className='slider-wrapper'>
       <Slider {...settings} className='slider'>
         {data.map((item) => (
-          <div key={item.id} onClick={chosenGameHandler.bind(null, item.id)}>
+          <div key={item.id} onClick={choseGameHandler.bind(null, item.id)}>
             <img src={item.thumbnail} alt={item.title} />
             {isForList && <p className='slide-name'>{item.title}</p>}
           </div>

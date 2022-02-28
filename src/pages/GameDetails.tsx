@@ -73,9 +73,15 @@ const GameDetails: React.FC = () => {
               />
             </div>
           </div>
-          <div className='flex flex-justify-between'>
+          <div
+            className={`flex ${
+              game.screenshots.length
+                ? 'flex-justify-between'
+                : 'flex-justify-center'
+            }`}
+          >
             <GameItem data={game} />
-            <GameGallery data={game} />
+            {game.screenshots.length && <GameGallery data={game} />}
           </div>
         </div>
       )}

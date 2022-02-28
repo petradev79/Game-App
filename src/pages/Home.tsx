@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
-import fetch from '../helper/fetch';
-import requests from '../helper/requests';
 import GameSlider from '../components/GameSlider';
 import HeaderTitle from '../UI/HeaderTitle';
 import ArticleCard from '../UI/ArticleCard';
 import ImageType from '../types/image';
+import AboutGame from '../components/AboutGame';
 import {
   faWandSparkles,
   faDice,
@@ -30,17 +28,7 @@ const settings = {
   centerPadding: '0',
 };
 
-const Home: React.FC = () => {
-  const [games, setGames] = useState<ImageType[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch.get(requests.fetchByPlatformPC);
-      setGames(response.data);
-    };
-    fetchData();
-  }, []);
-
+const Home: React.FC<{ games: ImageType[] }> = ({ games }) => {
   return (
     <main className='home'>
       <section className='home-header header'>
@@ -64,6 +52,9 @@ const Home: React.FC = () => {
           <ArticleCard title='Games by category' icon={faWandSparkles} />
           <ArticleCard title='Games by tag' icon={faDice} />
         </div>
+      </section>
+      <section className='home-body'>
+        <AboutGame />
       </section>
     </main>
   );

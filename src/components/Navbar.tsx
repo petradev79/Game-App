@@ -1,17 +1,21 @@
 import { NavLink } from 'react-router-dom';
+import Autocomplete from '../UI/Autocomplete';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy, faHouse } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/game-app-logo.svg';
+import ImageType from '../types/image';
 import './Navbar.css';
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ suggestions: ImageType[] }> = ({ suggestions }) => {
   return (
     <nav className='navbar'>
       <div className='navbar-wrapper'>
         <div className='logo'>
           <img src={logo} alt='logo' />
         </div>
+
         <div className='links'>
+          <Autocomplete suggestions={suggestions} />
           <NavLink
             className={({ isActive }) => (isActive ? 'link active' : 'link')}
             to='/'

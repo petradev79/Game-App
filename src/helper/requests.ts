@@ -1,4 +1,5 @@
 const requests = {
+  fetchAllGames: 'games',
   fetchByPlatformPC: 'games?platform=pc',
   fetchByPlatformBrowser: 'games?platform=browser',
   fetchByCategoryShooter: 'games?category=shooter',
