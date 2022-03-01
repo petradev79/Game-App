@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import fetch from './helper/fetch';
 import requests from './helper/requests';
 import Navbar from './components/Navbar';
